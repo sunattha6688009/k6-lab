@@ -1,7 +1,7 @@
 # K6 lab results
 
 ## Part 0
-- Step 0.1, http_req_duration:
+- Step 0.1, http_req_duration: avg=265.87ms min=265.87ms med=265.87ms max=265.87ms p(90)=265.87ms p(95)=265.87ms
 - Step 0.2, requests, rate and p(95), and why the rate stays below 5:
 - Step 0.6, exit code of the normal run and of the run with P95=300:
 - Step 0.7, rules that passed, p(95), p(99), exit code after your change:
