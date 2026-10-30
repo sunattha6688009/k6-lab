@@ -13,14 +13,14 @@
 | A1 | Smoke | 1 | 0.480697 | 370.97ms | 373.84ms | 0.00% | 100% (20/20) |
 | A2 | Average load | 3 | 1.31 | 380ms | 399ms | 0.00% | 100% |
 | A3 | Stress | 5 | 2.13 | 369ms | 465ms | 0.00% | 100% |
-| A4 | Spike | 5 | | | | | |
+| A4 | Spike | 5 | 1.03 | 384ms | 433ms | 0.00% | 100% |
 | A5 | Soak | 2 | | | | | |
 
 ## Part B
 1.
 2.
 3.
-4.
+4. The response time did not increase significantly during the spike. It stayed around 345–385 ms while the number of users increased to 5. After the spike, the response time remained mostly stable. Therefore, the system recovered quickly, within about 10 seconds.
 5.
 6.
 7.
