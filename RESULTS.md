@@ -31,4 +31,15 @@
 6. p95 shows how long 95% of requests take. It helps us understand the user experience better.
 7. Internet speed and network conditions can be different. Also, the public website may have other users.
 8. Testing with too many users may overload the website and affect other users.
-9. A testable requirement is: 95% of requests must respond within 1 second, and fewer than 1% of requests can fail.
+9. **Vague requirement:** The food ordering app should respond quickly when users order food.
+   **Testable requirement:** With 3 virtual users sending requests for 30 seconds, 95% of requests must finish within 1 second, 99% must finish within 1.5 seconds, and fewer than 1% of requests may fail.
+   **K6 thresholds:**
+```javascript
+thresholds: {
+  http_req_duration: [
+    'p(95)<1000',
+    'p(99)<1500',
+  ],
+  http_req_failed: ['rate<0.01'],
+}
+```
