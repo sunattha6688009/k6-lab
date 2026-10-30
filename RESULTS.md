@@ -14,15 +14,21 @@
 | A2 | Average load | 3 | 1.31 | 380ms | 399ms | 0.00% | 100% |
 | A3 | Stress | 5 | 2.13 | 369ms | 465ms | 0.00% | 100% |
 | A4 | Spike | 5 | 1.03 | 384ms | 433ms | 0.00% | 100% |
-| A5 | Soak | 2 | | | | | |
+| A5 | Soak | 2 | 0.94 | 387ms | 1s | 0.00% | 100% |
 
 ## Part B
-1.
-2.
-3.
-4. The response time did not increase significantly during the spike. It stayed around 345–385 ms while the number of users increased to 5. After the spike, the response time remained mostly stable. Therefore, the system recovered quickly, within about 10 seconds.
-5.
-6.
-7.
-8.
-9.
+1. | Step | Test type | Users | Req/s | p(95) | Max | Failed | Checks |
+   | ---- | ------------ | ----- | ----- | ----- | --- | ------ | ------ |
+   | A1 | Smoke | 1 | 0.480697 | 370.97ms | 373.84ms | 0.00% | 100% (20/20) |
+   | A2 | Average load | 3 | 1.31 | 380ms | 399ms | 0.00% | 100% |
+   | A3 | Stress | 5 | 2.13 | 369ms | 465ms | 0.00% | 100% |
+   | A4 | Spike | 5 | 1.03 | 384ms | 433ms | 0.00% | 100% |
+   | A5 | Soak | 2 | 0.94 | 387ms | 1s | 0.00% | 100% |
+2. Each virtual user sends one request and then sleeps for 1 second. The response time also adds to the waiting time, so 5 users send fewer than 5 requests per second.
+3. No. The p95 response time decreased from 380ms to 369ms. The system handled the stress test well.
+4. The response time stayed around 345–385ms during the spike. The system recovered in about 10 seconds.
+5. The response time stayed mostly stable, and the error rate remained at 0%. A soak test lasting several hours could reveal a memory leak.
+6. p95 shows how long 95% of requests take. It helps us understand the user experience better.
+7. Internet speed and network conditions can be different. Also, the public website may have other users.
+8. Testing with too many users may overload the website and affect other users.
+9. A testable requirement is: 95% of requests must respond within 1 second, and fewer than 1% of requests can fail.
